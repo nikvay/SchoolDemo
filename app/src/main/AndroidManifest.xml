@@ -45,20 +45,23 @@
             android:name="org.apache.http.legacy"
             android:required="false" />
 
-        <service
+       <!-- <service
             android:name=".firebaseServices.MyFirebaseInstanceIDService"
             tools:ignore="ExportedService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
-        </service>
+        </service>-->
+
         <service
             android:name=".firebaseServices.MyFirebaseMessagingService"
-            tools:ignore="ExportedService">
+            android:enabled="true"
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+
         <!-- Add the service created in services package ! -->
         <service android:name=".ui.service.LocationMonitoringService" />
 
