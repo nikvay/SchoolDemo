@@ -20,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.crashlytics.android.Crashlytics;
 import com.nikvay.schooldemo.domain.module.SplashModule;
 import com.nikvay.schooldemo.domain.module.SuccessModule;
 import com.nikvay.schooldemo.domain.network.ApiClient;
@@ -33,6 +34,7 @@ import com.nikvay.schooldemo.utils.NetworkUtils;
 import com.squareup.picasso.Picasso;
 import com.tbruyelle.rxpermissions.RxPermissions;
 
+import io.fabric.sdk.android.Fabric;
 import java.util.ArrayList;
 
 import es.dmoral.toasty.Toasty;
@@ -63,6 +65,7 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Fabric.with(this, new Crashlytics());
         //=============== hide status bar ===============
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_splash);

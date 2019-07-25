@@ -110,7 +110,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             String title = intent.getStringExtra("TITLE");
             String description = intent.getStringExtra("DESCRIPTION");
             String redirectId = intent.getStringExtra("REDIRECT_ID");
-
+            Toast.makeText(this, redirectId, Toast.LENGTH_SHORT).show();
             notificationRedirect(redirectId);
         }
 
