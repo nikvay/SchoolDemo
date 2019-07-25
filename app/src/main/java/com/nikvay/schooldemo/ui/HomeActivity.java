@@ -110,7 +110,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             String title = intent.getStringExtra("TITLE");
             String description = intent.getStringExtra("DESCRIPTION");
             String redirectId = intent.getStringExtra("REDIRECT_ID");
-            Toast.makeText(this, redirectId, Toast.LENGTH_SHORT).show();
+        //    Toast.makeText(this, "Welcome"+redirectId, Toast.LENGTH_SHORT).show();
             notificationRedirect(redirectId);
         }
 
@@ -122,14 +122,15 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             ll_nav_leave.setVisibility(View.GONE);
             ll_bottom_home_work.setVisibility(View.GONE);
             ll_nav_leave_request.setVisibility(View.GONE);
-            ll_nav_upload_notes.setVisibility(View.GONE);
+            ll_nav_upload_notes.setVisibility(View.INVISIBLE);
             ll_nav_download_notes.setVisibility(View.GONE);
             ll_nav_video_tutorials.setVisibility(View.GONE);
             ll_nav_result.setVisibility(View.GONE);
             ll_nav_Library.setVisibility(View.GONE);
             ll_nav_fees.setVisibility(View.GONE);
 
-        } else if (isSelectUser.equalsIgnoreCase("2")) {
+        }
+        else if (isSelectUser.equalsIgnoreCase("2")) {
             ll_nav_leave.setVisibility(View.GONE);
             ll_nav_download_notes.setVisibility(View.GONE);
             ll_nav_result.setVisibility(View.GONE);
@@ -147,7 +148,6 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         } else if (isSelectUser.equalsIgnoreCase("4")) {
             ll_bottom_nav_click.setVisibility(View.GONE);
             ll_view_nav_click_driver_visible.setVisibility(View.VISIBLE);
-
             ll_nav_attendance.setVisibility(View.GONE);
             ll_nav_home_work.setVisibility(View.GONE);
             ll_nav_leave.setVisibility(View.GONE);

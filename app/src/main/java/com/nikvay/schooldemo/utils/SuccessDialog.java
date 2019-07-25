@@ -65,6 +65,6 @@ public class SuccessDialog {
 
                 }
             }
-        }, 3000);
+        }, 2000);
     }
 }

@@ -42,7 +42,8 @@ public class SharedPreference {
         return sharedPreferences.getString(DEVICE_TOKEN, "");
     }
 
-    public static void putUserID(Context context, String user_id) {
+    public static void putUserID(Context context, String user_id)
+    {
         SharedPreferences sharedPreferences = context.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         sharedPreferences.edit()
                 .putString(UID, user_id)

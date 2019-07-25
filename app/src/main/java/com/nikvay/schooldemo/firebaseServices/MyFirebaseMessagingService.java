@@ -47,11 +47,13 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     String notification_count, gallery_count;
 
 
-    public MyFirebaseMessagingService() {
+    public MyFirebaseMessagingService()
+    {
         // empty required
     }
     @Override
-    public void onNewToken(String token) {
+    public void onNewToken(String token)
+    {
         super.onNewToken(token);
         Log.d(TAG, "Refreshed token: " + token);
 
