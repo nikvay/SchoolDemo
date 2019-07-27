@@ -158,6 +158,9 @@
 
         <activity android:name=".ui.activity.DriverActivity" />
 
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="8231de6c0c7cdedee5183acb38f73cc9512671a5" />
     </application>
 
 </manifest>

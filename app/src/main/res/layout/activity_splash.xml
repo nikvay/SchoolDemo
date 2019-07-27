@@ -34,7 +34,7 @@
             android:id="@+id/tv_splash_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="WelCome"
+            android:text="WELCOME"
             android:textColor="@color/txt_color_white"
             android:textSize="35sp"
             android:textStyle="bold" />
@@ -43,7 +43,7 @@
             android:id="@+id/tv_splash_sub_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="School Admission "
+            android:text=" TO FAST CONNECT"
             android:textColor="@color/txt_color_white"
             android:textSize="@dimen/txt_size_17" />
 

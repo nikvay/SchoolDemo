@@ -48,7 +48,7 @@ public class HomeFragment extends Fragment {
     LinearLayout ll_only_std, ll_ts, ll_attendance_hide, ll_notes_hide, ll_result_hide, ll_library_hide, ll_ts_admin;
     RelativeLayout rel_notification_hide;
     LinearLayout ll_attendance, ll_tutorials, ll_events, ll_leave, ll_video, ll_gk_quiz, ll_holiday, ll_result, ll_library,
-            ll_home_work, ll_time_table, ll_gallery, ll_bus_track, ll_notification, ll_fees, ll_teacher;
+            ll_home_work, ll_time_table, ll_gallery, ll_notification, ll_fees, ll_teacher;
     CarouselView carousel_view;
 
     RelativeLayout rel_gallery_count, rel_notification_count;
@@ -59,7 +59,7 @@ public class HomeFragment extends Fragment {
     String TAG = getClass().getSimpleName();
     ApiInterface apiInterface;
     ProgressDialog pd;
-    String uId, isSelectUser;
+    String uId, isSelectUser,user;
     SharedPreferences sharedpreferences;
     SharedPreferences.Editor editor;
     public static String MyPREFERENCES = "Fast Connect";
@@ -78,7 +78,10 @@ public class HomeFragment extends Fragment {
         mContext = getActivity();
 
         find_All_IDs(view);
-
+        if (user.equals("student"))
+        {
+            ll_teacher.setVisibility(View.INVISIBLE);
+        }
         sharedpreferences = mContext.getSharedPreferences(MyPREFERENCES, MODE_PRIVATE);
         apiInterface = ApiClient.getClient().create(ApiInterface.class);
         isSelectUser = sharedpreferences.getString(SharedPreference.U_TYPE, "");
@@ -129,6 +132,8 @@ public class HomeFragment extends Fragment {
     }
 
     private void find_All_IDs(View view) {
+        SharedPreferences sharedUser=getContext().getSharedPreferences("sharedUser",MODE_PRIVATE);
+        user=sharedUser.getString("user"," ");
         ll_only_std = view.findViewById(R.id.ll_only_std);
         ll_ts = view.findViewById(R.id.ll_ts);
         ll_attendance_hide = view.findViewById(R.id.ll_attendance_hide);
@@ -150,7 +155,7 @@ public class HomeFragment extends Fragment {
         ll_home_work = view.findViewById(R.id.ll_home_work);
         ll_time_table = view.findViewById(R.id.ll_time_table);
         ll_gallery = view.findViewById(R.id.ll_gallery);
-        ll_bus_track = view.findViewById(R.id.ll_bus_track);
+        //ll_bus_track = view.findViewById(R.id.ll_bus_track);
         ll_notification = view.findViewById(R.id.ll_notification);
         ll_fees = view.findViewById(R.id.ll_fees);
         ll_teacher = view.findViewById(R.id.ll_teacher);
@@ -307,12 +312,12 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        ll_bus_track.setOnClickListener(new View.OnClickListener() {
+/*        ll_bus_track.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ((HomeActivity) mContext).replaceFragment(new BusTrackFragment());
             }
-        });
+        });*/
 
         ll_notification.setOnClickListener(new View.OnClickListener() {
             @Override

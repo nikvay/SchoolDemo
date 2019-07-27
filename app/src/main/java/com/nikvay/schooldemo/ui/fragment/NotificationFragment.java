@@ -33,7 +33,7 @@ public class NotificationFragment extends Fragment {
     ViewPager viewPager;
     Button btn_notification;
 
-    String isSelectUser;
+    String isSelectUser,user;
     private SharedPreferences sharedpreferences;
     public static String MyPREFERENCES = "Fast Connect";
 
@@ -49,7 +49,10 @@ public class NotificationFragment extends Fragment {
         sharedpreferences = mContext.getSharedPreferences(MyPREFERENCES, MODE_PRIVATE);
 
         find_All_IDs(view);
-
+        if (user.equals("student"))
+        {
+            btn_notification.setVisibility(View.GONE);
+        }
         isSelectUser = sharedpreferences.getString(SharedPreference.U_TYPE, "");
         if (isSelectUser.equalsIgnoreCase("3")) {
             btn_notification.setVisibility(View.GONE);
@@ -77,7 +80,10 @@ public class NotificationFragment extends Fragment {
         return view;
     }//========== End onCreate () ==============
 
-    private void find_All_IDs(View view) {
+    private void find_All_IDs(View view)
+    {
+        SharedPreferences sharedUser=getContext().getSharedPreferences("sharedUser",MODE_PRIVATE);
+        user=sharedUser.getString("user"," ");
         viewPager = view.findViewById(R.id.viewPager);
         tabLayout = view.findViewById(R.id.tabLayout);
         btn_notification = view.findViewById(R.id.btn_notification);

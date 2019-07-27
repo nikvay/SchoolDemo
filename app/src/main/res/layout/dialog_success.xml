@@ -9,14 +9,12 @@
     android:paddingRight="10dp"
     android:paddingTop="20dp">
 
-   <!-- <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:src="@drawable/app_success_gif" />-->
     <pl.droidsonroids.gif.GifImageView
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:src="@drawable/app_success_gif" />
+
+
 
     <TextView
         android:id="@+id/textMesageDialog"

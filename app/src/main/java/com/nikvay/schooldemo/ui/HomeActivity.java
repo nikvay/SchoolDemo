@@ -92,7 +92,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_home);
 
         find_All_IDs();
-
+        events();
         tv_title_name.setText("Dashboard");
         replaceFragment(new HomeFragment());
 
@@ -114,8 +114,11 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             notificationRedirect(redirectId);
         }
 
+        Toast.makeText(this, ""+isSelectUser, Toast.LENGTH_SHORT).show();
 
         if (isSelectUser.equalsIgnoreCase("1")) {
+            Toast.makeText(this, "admin", Toast.LENGTH_SHORT).show();
+
             ll_bottom_event.setVisibility(View.VISIBLE);
             ll_nav_attendance.setVisibility(View.GONE);
             ll_nav_home_work.setVisibility(View.GONE);
@@ -130,22 +133,32 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             ll_nav_fees.setVisibility(View.GONE);
 
         }
-        else if (isSelectUser.equalsIgnoreCase("2")) {
+        else if (isSelectUser.equalsIgnoreCase("2"))
+        {
+            Toast.makeText(this, "teacher", Toast.LENGTH_SHORT).show();
+
             ll_nav_leave.setVisibility(View.GONE);
             ll_nav_download_notes.setVisibility(View.GONE);
             ll_nav_result.setVisibility(View.GONE);
             ll_nav_fees.setVisibility(View.GONE);
 
-        } else if (isSelectUser.equalsIgnoreCase("3")) {
+        }
+        else if (isSelectUser.equalsIgnoreCase("3"))
+        {
+            Toast.makeText(this, "student", Toast.LENGTH_SHORT).show();
+
             ll_nav_leave_request.setVisibility(View.GONE);
             ll_nav_enquiry.setVisibility(View.GONE);
-            ll_nav_upload_notes.setVisibility(View.GONE);
+            ll_nav_upload_notes.setVisibility(View.INVISIBLE);
             tv_user_class.setVisibility(View.VISIBLE);
             ll_nav_gk_quiz.setVisibility(View.VISIBLE);
             ll_nav_fees.setVisibility(View.GONE);
             ll_nav_gk_quiz.setVisibility(View.GONE);
 
-        } else if (isSelectUser.equalsIgnoreCase("4")) {
+        } else if (isSelectUser.equalsIgnoreCase("4"))
+        {
+            Toast.makeText(this, "library", Toast.LENGTH_SHORT).show();
+
             ll_bottom_nav_click.setVisibility(View.GONE);
             ll_view_nav_click_driver_visible.setVisibility(View.VISIBLE);
             ll_nav_attendance.setVisibility(View.GONE);
@@ -162,7 +175,10 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             ll_nav_fees.setVisibility(View.GONE);
             ll_nav_enquiry.setVisibility(View.GONE);
 
-        } else if (isSelectUser.equalsIgnoreCase("5")) {
+        } else if (isSelectUser.equalsIgnoreCase("5"))
+        {
+            Toast.makeText(this, "driver", Toast.LENGTH_SHORT).show();
+
             ll_view_nav_click_driver_visible.setVisibility(View.VISIBLE);
             ll_nav_click_driver_hide.setVisibility(View.GONE);
             ll_bottom_nav_click.setVisibility(View.GONE);
@@ -170,6 +186,21 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent1);
             overridePendingTransition(R.anim.trans_left_in, R.anim.trans_left_out);
             finish();
+        }
+        else
+        {
+SharedPreferences sharedUser=getSharedPreferences("sharedUser",MODE_PRIVATE);
+SharedPreferences.Editor editor=sharedUser.edit();
+editor.putString("user","student");
+editor.apply();
+editor.commit();
+            ll_nav_leave_request.setVisibility(View.GONE);
+            ll_nav_enquiry.setVisibility(View.GONE);
+            ll_nav_upload_notes.setVisibility(View.GONE);
+            tv_user_class.setVisibility(View.VISIBLE);
+            ll_nav_gk_quiz.setVisibility(View.VISIBLE);
+            ll_nav_fees.setVisibility(View.GONE);
+            ll_nav_gk_quiz.setVisibility(View.GONE);
         }
 
         String refresh = sharedpreferences.getString(SharedPreference.REFRESH, "");
@@ -208,6 +239,13 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         ll_bottom_event.setOnClickListener(this);
 
     } //==========End onCreate() ==================
+
+    private void events()
+    {
+        Intent intent=new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+    }
 
     private void refreshActivity(String refresh) {
         if (refresh != null && refresh.equals("1")) {

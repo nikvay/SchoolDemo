@@ -68,8 +68,8 @@ import retrofit2.Response;
 
 import static android.widget.Toast.LENGTH_LONG;
 
-public class NotificationAddActivity extends AppCompatActivity implements SuccessDialogClosed {
-
+public class NotificationAddActivity extends AppCompatActivity implements SuccessDialogClosed
+{
     private SuccessDialog successDialog;
 
     ImageView iv_back;

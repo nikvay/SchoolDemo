@@ -387,8 +387,15 @@
 
                 </LinearLayout>
 
+
+
+
+
+
+
+
                 <LinearLayout
-                    android:id="@+id/ll_teacher"
+                    android:id="@+id/ll_gk_quiz"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -398,7 +405,7 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/shape_teacher"
+                        android:background="@drawable/shape_quiz_que"
                         android:gravity="center"
                         android:orientation="vertical">
 
@@ -406,7 +413,7 @@
                             android:layout_width="60dp"
                             android:layout_height="60dp"
                             android:padding="@dimen/padding_10"
-                            android:src="@drawable/ic_vector_teacher" />
+                            android:src="@drawable/ic_vector_test_quiz" />
 
                     </LinearLayout>
 
@@ -416,11 +423,12 @@
                         android:layout_gravity="center"
                         android:gravity="center"
                         android:padding="@dimen/padding_1"
-                        android:text="Staff"
-                        android:textColor="#000000"
+                        android:text="Gk Quiz"
+                        android:textColor="#000"
                         android:textSize="@dimen/txt_size_15" />
-
                 </LinearLayout>
+
+
 
                 <LinearLayout
                     android:visibility="gone"
@@ -614,7 +622,7 @@
                 android:orientation="horizontal"
                 android:weightSum="4">
 
-                <LinearLayout
+                <!--<LinearLayout
                     android:id="@+id/ll_bus_track"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -622,6 +630,7 @@
                     android:gravity="center"
                     android:orientation="vertical">
 
+&lt;!&ndash;
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -636,8 +645,9 @@
                             android:src="@drawable/ic_vector_school_bus" />
 
                     </LinearLayout>
+&ndash;&gt;
 
-                    <TextView
+  &lt;!&ndash;                  <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -645,9 +655,9 @@
                         android:padding="@dimen/padding_1"
                         android:text="Bus Track"
                         android:textColor="#000000"
-                        android:textSize="@dimen/txt_size_15" />
+                        android:textSize="@dimen/txt_size_15" />&ndash;&gt;
                 </LinearLayout>
-
+-->
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -683,8 +693,14 @@
 
                 </LinearLayout>
 
+
+
+
+
+
+
                 <LinearLayout
-                    android:id="@+id/ll_gk_quiz"
+                    android:id="@+id/ll_teacher"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -694,7 +710,7 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/shape_quiz_que"
+                        android:background="@drawable/shape_teacher"
                         android:gravity="center"
                         android:orientation="vertical">
 
@@ -702,7 +718,7 @@
                             android:layout_width="60dp"
                             android:layout_height="60dp"
                             android:padding="@dimen/padding_10"
-                            android:src="@drawable/ic_vector_test_quiz" />
+                            android:src="@drawable/ic_vector_teacher" />
 
                     </LinearLayout>
 
@@ -712,10 +728,18 @@
                         android:layout_gravity="center"
                         android:gravity="center"
                         android:padding="@dimen/padding_1"
-                        android:text="Gk Quiz"
-                        android:textColor="#000"
+                        android:text="Staff"
+                        android:textColor="#000000"
                         android:textSize="@dimen/txt_size_15" />
+
                 </LinearLayout>
+
+
+
+
+
+
+
 
             </LinearLayout>
 

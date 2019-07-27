@@ -18,11 +18,12 @@
         app:tabIndicatorAnimationDuration="1" />
 
     <android.support.v4.view.ViewPager
-        android:layout_below="@+id/tabLayout"
         android:id="@+id/viewPager"
-        android:layout_above="@+id/ll_bottom_notification"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@+id/ll_bottom_notification"
+        android:layout_below="@+id/tabLayout"
+        android:layout_marginBottom="0dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
     <LinearLayout
