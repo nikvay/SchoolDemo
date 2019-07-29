@@ -33,6 +33,8 @@ public class EndApi extends BaseApi {
     public static final String VIDEO_CATEGORIES = "ws-video-tutorial-categories-list";
 
 
+    public static final String STUDENT_EXAM_LIST="ws-student-exam-list";
+
     public static final String UPLOAD_TIME_TABLE = "ws-add-time-table";
     public static final String TIME_TABLE_LIST = "ws-list-time-table";
     public static final String HOLIDAY_LIST = "ws-list-acadamic-calender";

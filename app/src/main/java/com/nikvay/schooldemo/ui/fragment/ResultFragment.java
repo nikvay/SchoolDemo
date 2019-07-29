@@ -16,11 +16,13 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.nikvay.schooldemo.R;
+import com.nikvay.schooldemo.domain.module.ExamListModel;
 import com.nikvay.schooldemo.domain.module.ResultExamNameModule;
 import com.nikvay.schooldemo.domain.module.SuccessModule;
 import com.nikvay.schooldemo.domain.network.ApiClient;
 import com.nikvay.schooldemo.domain.network.ApiInterface;
 import com.nikvay.schooldemo.shared_pref.SharedPreference;
+import com.nikvay.schooldemo.ui.adapter.ExamListAdapter;
 import com.nikvay.schooldemo.ui.adapter.GalleryAdapter;
 import com.nikvay.schooldemo.ui.adapter.ResultAdapter;
 import com.nikvay.schooldemo.utils.NetworkUtils;
@@ -40,7 +42,7 @@ public class ResultFragment extends Fragment {
 
     Context mContext;
     ImageView iv_empty_list;
-
+    ArrayList<ExamListModel>examList=new ArrayList<>();
     //======Interface Declaration=========
     String TAG = getClass().getSimpleName();
     ApiInterface apiInterface;
@@ -88,13 +90,55 @@ public class ResultFragment extends Fragment {
         iv_empty_list=view.findViewById(R.id.iv_empty_list);
     }
 
-    private void doResultList() {
-        pd = new ProgressDialog(mContext);
+    private void doResultList()
+    {
+        /*pd = new ProgressDialog(mContext);
         pd.setMessage("Loading Please Wait...");
         pd.setCancelable(false);
-        pd.show();
+        pd.show();*/
 
-        Call<SuccessModule> call = apiInterface.resultListCall(uId);
+        Call<SuccessModule>call=apiInterface.getExamList();
+        call.enqueue(new Callback<SuccessModule>() {
+            @Override
+            public void onResponse(Call<SuccessModule> call, Response<SuccessModule> response)
+            {
+
+                String str_response=new Gson().toJson(response.body());
+                try {
+                    if (response.isSuccessful())
+                    {
+                        SuccessModule successModule=response.body();
+                        String msg=null,error_code=null;
+                        if (successModule!=null)
+                        {
+                            msg=successModule.getMsg();
+                            error_code=successModule.getError_code();
+
+                            examList=successModule.getExamListModelArrayList();
+                            Collections.reverse(examList);
+                            ExamListAdapter examListAdapter=new ExamListAdapter(getContext(),examList);
+                            recycler_view_result.setAdapter(examListAdapter);
+                            examListAdapter.notifyDataSetChanged();
+
+
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<SuccessModule> call, Throwable t)
+            {
+
+            }
+        });
+
+
+       /* Call<SuccessModule> call = apiInterface.resultListCall(uId);
 
         call.enqueue(new Callback<SuccessModule>() {
             @Override
@@ -102,7 +146,6 @@ public class ResultFragment extends Fragment {
                 pd.dismiss();
                 String str_response = new Gson().toJson(response.body());
                 Log.e("" + TAG, "Response >>>>" + str_response);
-
                 try {
                     if (response.isSuccessful()) {
                         SuccessModule successModule = response.body();
@@ -132,7 +175,8 @@ public class ResultFragment extends Fragment {
 
                             }
                         }
-                    } else {
+                    } else
+                        {
                         Toasty.warning(mContext, "Service Unavailable !!", Toast.LENGTH_SHORT, true).show();
                     }
                 } catch (Exception e) {
@@ -145,7 +189,7 @@ public class ResultFragment extends Fragment {
                 pd.dismiss();
                 Toasty.error(mContext, "" + t.getMessage(), Toast.LENGTH_SHORT, true).show();
             }
-        });
+        });*/
     }
 
 }

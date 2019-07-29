@@ -6,7 +6,8 @@ import com.nikvay.schooldemo.ui.module.VideoCategoryModel;
 
 import java.util.ArrayList;
 
-public class SuccessModule {
+public class SuccessModule
+{
     private String msg;
     private String error_code;
     private String img_base_url;
@@ -81,6 +82,17 @@ public class SuccessModule {
     public void setVideoCategoryModelArrayList(ArrayList<VideoCategoryModel> videoCategoryModelArrayList)
     {
         this.videoCategoryModelArrayList = videoCategoryModelArrayList;
+    }
+
+    @SerializedName("exam_list")
+        private ArrayList<ExamListModel>examListModelArrayList;
+
+    public ArrayList<ExamListModel> getExamListModelArrayList() {
+        return examListModelArrayList;
+    }
+
+    public void setExamListModelArrayList(ArrayList<ExamListModel> examListModelArrayList) {
+        this.examListModelArrayList = examListModelArrayList;
     }
 
     @SerializedName("Fees_Details")

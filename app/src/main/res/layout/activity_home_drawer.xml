@@ -320,7 +320,7 @@
 
         </LinearLayout>
 
-        <LinearLayout
+    <!--    <LinearLayout
             android:id="@+id/ll_nav_Library"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -347,7 +347,7 @@
                 android:textSize="@dimen/txt_size_17" />
 
         </LinearLayout>
-
+-->
         <LinearLayout
             android:id="@+id/ll_nav_holiday"
             android:layout_width="match_parent"
@@ -433,7 +433,7 @@
 
         </LinearLayout>
 
-        <LinearLayout
+    <!--    <LinearLayout
             android:id="@+id/ll_nav_leave_request"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -460,7 +460,7 @@
                 android:textSize="@dimen/txt_size_17" />
 
         </LinearLayout>
-
+-->
         <LinearLayout
             android:id="@+id/ll_nav_enquiry"
             android:layout_width="match_parent"

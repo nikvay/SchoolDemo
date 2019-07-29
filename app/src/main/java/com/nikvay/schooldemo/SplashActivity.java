@@ -179,7 +179,7 @@ public class SplashActivity extends AppCompatActivity {
                                         tv_splash_title.setText(title);
                                         animBounce = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.bounce);
                                         tv_splash_title.startAnimation(animBounce);
-                                        tv_splash_sub_title.setText(subTitle);
+                                        tv_splash_sub_title.setText("Fast Connect");
                                         setScaleAnimation(tv_splash_sub_title);
 
                                     }

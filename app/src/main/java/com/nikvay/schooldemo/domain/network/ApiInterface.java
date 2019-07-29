@@ -164,8 +164,9 @@ public interface ApiInterface
     @FormUrlEncoded
     Call<SuccessModule> notesDeleteTeacherCall(@Field("note_id") String note_id);
 
-    @GET(EndApi.VIDEO_TUTORIALS)
-    Call<SuccessModule> videoTutorialsListCall();
+    @POST(EndApi.VIDEO_TUTORIALS)
+    @FormUrlEncoded
+    Call<SuccessModule> videoTutorialsListCall(@Field("cat_id")String cat_id);
 
     @POST(EndApi.UPLOAD_TIME_TABLE)
     @FormUrlEncoded
@@ -176,6 +177,9 @@ public interface ApiInterface
                                             @Field("title") String title,
                                             @Field("note_document") String note_document,
                                             @Field("extension") String extension);
+
+    @POST(EndApi.STUDENT_EXAM_LIST)
+    Call<SuccessModule>getExamList();
 
     @POST(EndApi.VIDEO_CATEGORIES)
     Call<SuccessModule>categoriesList();

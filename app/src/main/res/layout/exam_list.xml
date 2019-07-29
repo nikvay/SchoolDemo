@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+<android.support.v7.widget.CardView
+    android:id="@+id/card"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginTop="10dp"
+    android:elevation="8dp"
+    app:cardCornerRadius="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="65dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_centerVertical="true"
+            android:id="@+id/iv_exam"
+            android:src="@drawable/attendant"
+            android:layout_width="45dp"
+            android:layout_height="45dp"/>
+    <TextView
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/iv_exam"
+        android:text="First Term"
+        android:id="@+id/exam_name"
+        android:textSize="22dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
+</LinearLayout>

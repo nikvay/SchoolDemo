@@ -3,7 +3,7 @@
     <!--<color name="colorPrimary">#008577</color>-->
     <color name="colorPrimary">#3499DB</color>
     <!--<color name="colorPrimaryDark">#00574B</color>-->
-    <color name="colorPrimaryDark">#FC135D8D</color>
+    <color name="colorPrimaryDark">#3499DB</color>
     <color name="colorAccent">#3499DB</color>
 
 
@@ -25,7 +25,7 @@
     <color name="txt_link_color">#4960E4</color>
     <color name="update_date_color">#3bae27</color>
 
-    <color name="white">#FFFFFF</color>
+    <color name="white">#F5F2F2</color>
     <color name="black">#000000</color>
     <color name="black_faint">#65000000</color>
     <color name="lightgray">#e7e7e7</color>

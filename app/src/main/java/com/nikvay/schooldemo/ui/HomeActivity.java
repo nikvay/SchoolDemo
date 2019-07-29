@@ -65,8 +65,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     private DrawerLayout drawer;
     private ImageView iv_menu_toolbar, iv_nav_edt_profile;
     private LinearLayout ll_nav_click_driver_hide, ll_bottom_nav_click, ll_nav_notification, ll_nav_attendance, ll_nav_time_table, ll_nav_result, ll_nav_home_work,
-            ll_nav_gallery, ll_nav_fees, ll_nav_Library, ll_nav_video_tutorials, ll_nav_upload_notes, ll_nav_download_notes,
-            ll_nav_events, ll_nav_holiday, ll_nav_gk_quiz, ll_nav_enquiry, ll_nav_leave, ll_nav_leave_request, ll_nav_about_us,
+            ll_nav_gallery, ll_nav_fees, ll_nav_video_tutorials, ll_nav_upload_notes, ll_nav_download_notes,
+            ll_nav_events, ll_nav_holiday, ll_nav_gk_quiz, ll_nav_enquiry, ll_nav_leave, ll_nav_about_us,
             ll_nav_setting, ll_nav_share, ll_nav_log_out, ll_comp_name;
 
     View ll_view_nav_click_driver_visible;
@@ -124,12 +124,12 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             ll_nav_home_work.setVisibility(View.GONE);
             ll_nav_leave.setVisibility(View.GONE);
             ll_bottom_home_work.setVisibility(View.GONE);
-            ll_nav_leave_request.setVisibility(View.GONE);
+            //ll_nav_leave_request.setVisibility(View.GONE);
             ll_nav_upload_notes.setVisibility(View.INVISIBLE);
             ll_nav_download_notes.setVisibility(View.GONE);
             ll_nav_video_tutorials.setVisibility(View.GONE);
             ll_nav_result.setVisibility(View.GONE);
-            ll_nav_Library.setVisibility(View.GONE);
+           // ll_nav_Library.setVisibility(View.GONE);
             ll_nav_fees.setVisibility(View.GONE);
 
         }
@@ -148,7 +148,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             Toast.makeText(this, "student", Toast.LENGTH_SHORT).show();
             ll_nav_gk_quiz.setVisibility(View.VISIBLE);
 
-            ll_nav_leave_request.setVisibility(View.VISIBLE);
+         //   ll_nav_leave_request.setVisibility(View.VISIBLE);
             ll_nav_enquiry.setVisibility(View.GONE);
             ll_nav_upload_notes.setVisibility(View.GONE);
             tv_user_class.setVisibility(View.VISIBLE);
@@ -165,7 +165,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             ll_nav_home_work.setVisibility(View.GONE);
             ll_nav_leave.setVisibility(View.GONE);
             ll_bottom_home_work.setVisibility(View.GONE);
-            ll_nav_leave_request.setVisibility(View.GONE);
+            //ll_nav_leave_request.setVisibility(View.GONE);
             ll_nav_upload_notes.setVisibility(View.GONE);
             ll_nav_download_notes.setVisibility(View.GONE);
             ll_nav_video_tutorials.setVisibility(View.GONE);
@@ -215,7 +215,7 @@ editor.commit();
         ll_nav_home_work.setOnClickListener(this);
         ll_nav_gallery.setOnClickListener(this);
         ll_nav_fees.setOnClickListener(this);
-        ll_nav_Library.setOnClickListener(this);
+        //ll_nav_Library.setOnClickListener(this);
         ll_nav_video_tutorials.setOnClickListener(this);
         ll_nav_download_notes.setOnClickListener(this);
         ll_nav_upload_notes.setOnClickListener(this);
@@ -223,7 +223,7 @@ editor.commit();
         ll_nav_holiday.setOnClickListener(this);
         ll_nav_gk_quiz.setOnClickListener(this);
         ll_nav_leave.setOnClickListener(this);
-        ll_nav_leave_request.setOnClickListener(this);
+      //  ll_nav_leave_request.setOnClickListener(this);
         ll_nav_enquiry.setOnClickListener(this);
         ll_nav_about_us.setOnClickListener(this);
         ll_nav_setting.setOnClickListener(this);
@@ -360,7 +360,7 @@ editor.commit();
         ll_nav_home_work = findViewById(R.id.ll_nav_home_work);
         ll_nav_gallery = findViewById(R.id.ll_nav_gallery);
         ll_nav_fees = findViewById(R.id.ll_nav_fees);
-        ll_nav_Library = findViewById(R.id.ll_nav_Library);
+        //ll_nav_Library = findViewById(R.id.ll_nav_Library);
         ll_nav_video_tutorials = findViewById(R.id.ll_nav_video_tutorials);
         ll_nav_download_notes = findViewById(R.id.ll_nav_download_notes);
         ll_nav_upload_notes = findViewById(R.id.ll_nav_upload_notes);
@@ -368,7 +368,7 @@ editor.commit();
         ll_nav_holiday = findViewById(R.id.ll_nav_holiday);
         ll_nav_gk_quiz = findViewById(R.id.ll_nav_gk_quiz);
         ll_nav_leave = findViewById(R.id.ll_nav_leave);
-        ll_nav_leave_request = findViewById(R.id.ll_nav_leave_request);
+        //ll_nav_leave_request = findViewById(R.id.ll_nav_leave_request);
         ll_nav_enquiry = findViewById(R.id.ll_nav_enquiry);
         ll_nav_about_us = findViewById(R.id.ll_nav_about_us);
         ll_nav_setting = findViewById(R.id.ll_nav_setting);
@@ -580,7 +580,9 @@ editor.commit();
             replaceFragment(new FeesFragment());
             drawer.closeDrawer(GravityCompat.START);
 
-        } else if (id == R.id.ll_nav_Library) {
+        }
+    /*    else if (id == R.id.ll_nav_Library)
+        {
             if (isSelectUser.equalsIgnoreCase("4")) {
                 replaceFragment(new LibraryFragment());
             } else if (isSelectUser.equalsIgnoreCase("2") || isSelectUser.equalsIgnoreCase("3")) {
@@ -588,7 +590,8 @@ editor.commit();
             }
             drawer.closeDrawer(GravityCompat.START);
 
-        } else if (id == R.id.ll_nav_holiday) {
+        } */
+        else if (id == R.id.ll_nav_holiday) {
             Intent intent = new Intent(HomeActivity.this, HolidayActivity.class);
             startActivity(intent);
             overridePendingTransition(R.anim.trans_left_in, R.anim.trans_left_out);
@@ -602,11 +605,15 @@ editor.commit();
             replaceFragment(new LeaveFragment());
             drawer.closeDrawer(GravityCompat.START);
 
-        } else if (id == R.id.ll_nav_leave_request) {
+        }
+        /*else if (id == R.id.ll_nav_leave_request)
+        {
             replaceFragment(new LeaveFragment());
             drawer.closeDrawer(GravityCompat.START);
 
-        } else if (id == R.id.ll_nav_enquiry) {
+        }
+        */
+        else if (id == R.id.ll_nav_enquiry) {
             replaceFragment(new EnquiryFragment());
             drawer.closeDrawer(GravityCompat.START);
 

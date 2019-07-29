@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Fast Connect</string>
 
-  <!-- location -->
+    <!-- location -->
     <string name="permission_rationale">Please grant location permission to start the service</string>
     <string name="permission_denied_explanation">You have not granted location permission. So the service cannot be started.</string>
     <string name="settings">settings</string>

@@ -89,14 +89,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
-                        android:background="@drawable/shape_notification"
+                        android:background="@drawable/shape_fees"
                         android:orientation="vertical">
 
                         <ImageView
                             android:layout_width="60dp"
                             android:layout_height="60dp"
                             android:padding="@dimen/padding_10"
-                            android:src="@drawable/ic_vector_bell" />
+                            android:src="@drawable/noticeboard" />
 
                     </LinearLayout>
 
@@ -151,7 +151,7 @@
                             android:id="@+id/ll_attendance"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/shape_attendance"
+                            android:background="@drawable/shape_fees"
                             android:gravity="center"
                             android:orientation="vertical">
 
@@ -195,7 +195,7 @@
                         android:id="@+id/ll_time_table"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/shape_timetable"
+                        android:background="@drawable/shape_fees"
                         android:gravity="center"
                         android:orientation="vertical">
 
@@ -212,7 +212,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:padding="@dimen/padding_1"
-                        android:text="Timetable"
+                        android:text="Time-Table"
                         android:textColor="#000000"
                         android:textSize="@dimen/txt_size_15" />
                 </LinearLayout>
@@ -242,7 +242,7 @@
                         android:id="@+id/ll_holiday"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/shape_homework"
+                        android:background="@drawable/shape_fees"
                         android:gravity="center"
                         android:orientation="vertical">
 
@@ -299,7 +299,7 @@
                         android:id="@+id/ll_tutorials"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/shape_notes"
+                        android:background="@drawable/shape_fees"
                         android:gravity="center"
                         android:orientation="vertical">
 
@@ -307,7 +307,7 @@
                             android:layout_width="60dp"
                             android:layout_height="60dp"
                             android:padding="@dimen/padding_10"
-                            android:src="@drawable/ic_vetor_tutorials" />
+                            android:src="@drawable/notes" />
 
                     </LinearLayout>
 
@@ -334,7 +334,7 @@
                         android:id="@+id/ll_home_work"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/shape_homework"
+                        android:background="@drawable/shape_fees"
                         android:gravity="center"
                         android:orientation="vertical">
 
@@ -342,7 +342,7 @@
                             android:layout_width="60dp"
                             android:layout_height="60dp"
                             android:padding="@dimen/padding_10"
-                            android:src="@drawable/ic_vector_homework" />
+                            android:src="@drawable/homework" />
 
                     </LinearLayout>
 
@@ -373,7 +373,7 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/shape_teacher"
+                        android:background="@drawable/shape_fees"
                         android:gravity="center"
                         android:orientation="vertical">
 
@@ -405,15 +405,15 @@
                         android:id="@+id/ll_events"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:background="@drawable/shape_fees"
                         android:layout_centerHorizontal="true"
-                        android:background="@drawable/shape_events"
                         android:orientation="vertical">
 
                         <ImageView
                             android:layout_width="60dp"
                             android:layout_height="60dp"
                             android:padding="@dimen/padding_10"
-                            android:src="@drawable/ic_vector_event" />
+                            android:src="@drawable/event"/>
 
                     </LinearLayout>
 
@@ -431,7 +431,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignEnd="@+id/ll_events"
-                        android:background="@drawable/shape_notification_count"
+                        android:background="@drawable/shape_fees"
                         android:visibility="gone">
 
                         <TextView
@@ -459,7 +459,7 @@
                         android:id="@+id/ll_result"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/shape_attendance"
+                        android:background="@drawable/shape_fees"
                         android:gravity="center"
                         android:orientation="vertical">
 
@@ -467,7 +467,7 @@
                             android:layout_width="60dp"
                             android:layout_height="60dp"
                             android:padding="@dimen/padding_10"
-                            android:src="@drawable/ic_vector_result" />
+                            android:src="@drawable/results" />
 
                     </LinearLayout>
 
@@ -538,7 +538,7 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/shape_bus_track"
+                        android:background="@drawable/shape_fees"
                         android:gravity="center"
                         android:orientation="vertical">
 
@@ -572,7 +572,7 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/shape_notes"
+                        android:background="@drawable/shape_fees"
                         android:gravity="center"
                         android:orientation="vertical">
 
@@ -580,7 +580,7 @@
                             android:layout_width="60dp"
                             android:layout_height="60dp"
                             android:padding="@dimen/padding_10"
-                            android:src="@drawable/ic_vector_edu_video" />
+                            android:src="@drawable/video" />
 
                     </LinearLayout>
 
@@ -606,7 +606,7 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/shape_quiz_que"
+                        android:background="@drawable/shape_fees"
                         android:gravity="center"
                         android:orientation="vertical">
 
@@ -614,7 +614,7 @@
                             android:layout_width="60dp"
                             android:layout_height="60dp"
                             android:padding="@dimen/padding_10"
-                            android:src="@drawable/ic_vector_test_quiz" />
+                            android:src="@drawable/quiz" />
 
                     </LinearLayout>
 
@@ -649,7 +649,7 @@
                             android:layout_width="60dp"
                             android:layout_height="60dp"
                             android:padding="@dimen/padding_10"
-                            android:src="@drawable/ic_vector_fees" />
+                            android:src="@drawable/feess" />
 
                     </LinearLayout>
 
@@ -719,7 +719,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
-                        android:background="@drawable/shape_gallery"
+                        android:background="@drawable/shape_fees"
                         android:orientation="vertical">
 
                         <ImageView
@@ -760,6 +760,40 @@
                     </RelativeLayout>
 
                 </RelativeLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/shape_fees"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:padding="@dimen/padding_10"
+                            android:src="@drawable/chat" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:padding="@dimen/padding_1"
+                        android:text="Group Chat"
+                        android:textColor="#000"
+                        android:textSize="@dimen/txt_size_15" />
+                </LinearLayout>
+
+
             </LinearLayout>
 
         </LinearLayout>
