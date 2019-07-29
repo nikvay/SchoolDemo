@@ -1,166 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:paddingLeft="@dimen/padding_5"
     android:paddingRight="@dimen/padding_5"
     android:weightSum="3">
+<LinearLayout
+    android:layout_marginTop="30dp"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@drawable/row_shape"
+    android:layout_height="wrap_content">
+    <TextView
+        android:textSize="22dp"
+        android:layout_marginLeft="15dp"
+        android:id="@+id/student_name"
+        android:layout_width="wrap_content"
+        android:gravity="center"
+        android:layout_height="50dp"/>
+    <TextView
+        android:layout_marginLeft="15dp"
+        android:text="10th"
+        android:textSize="22dp"
+        android:id="@+id/standard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TableLayout
+            android:layout_marginLeft="20dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TableRow
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/year"
+                android:layout_marginLeft="@dimen/margin_20"
+                android:textSize="18dp"
+                android:text="2019"
+                android:background="@drawable/row_shape"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:layout_height="50dp"/>
+        </TableRow>
+<TableRow
+    android:layout_marginTop="5dp">
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_vertical|center_horizontal"
-        android:text="Coming soon"
-        android:textSize="@dimen/txt_size_17" />
-    <!--        android:visibility="gone"-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="@dimen/margin_5"
-        android:layout_weight="1"
-        android:background="@drawable/shape_calendar_header"
-        android:orientation="vertical"
-        android:visibility="gone">
-
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/shape_quiz_que"
-            android:padding="@dimen/padding_5">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:text="Payment Details"
-                android:textColor="#fff"
-                android:textSize="@dimen/txt_size_17" />
-
-        </RelativeLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/recycler_view_payment_details"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-
-        </LinearLayout>
-
-
-    </LinearLayout>
-
-    <!--        android:visibility="gone"-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="@dimen/margin_5"
-        android:layout_weight="1"
-        android:background="@drawable/shape_calendar_header"
-        android:orientation="vertical"
-        android:visibility="gone">
-
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/shape_quiz_que"
-            android:padding="@dimen/padding_5">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:text="Important dues "
-                android:textColor="#fff"
-                android:textSize="@dimen/txt_size_17" />
-
-        </RelativeLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/recycler_view_due"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-
-        </LinearLayout>
-
-
-    </LinearLayout>
-    <!--        android:visibility="gone"-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="@dimen/margin_5"
-        android:layout_weight="1"
-        android:background="@drawable/shape_calendar_header"
-        android:orientation="vertical"
-        android:visibility="gone">
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/shape_quiz_que"
-            android:padding="@dimen/padding_5"
-            android:weightSum="3">
+        android:layout_marginLeft="@dimen/margin_20"
+        android:textSize="18dp"
+        android:id="@+id/total_fees"
+        android:text="Total Fees"
+        android:background="@drawable/row_shape"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:gravity="center"
+        android:layout_height="50dp"/>
+</TableRow>
+        <TableRow
+            android:layout_marginTop="5dp">
 
 
             <TextView
+                android:id="@+id/paid_fees"
+                android:layout_marginLeft="@dimen/margin_20"
+                android:textSize="18dp"
+                android:text="Paid Fees"
+                android:background="@drawable/row_shape"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
                 android:gravity="center"
-                android:text="Header"
-                android:textColor="#fff"
-                android:textSize="@dimen/txt_size_17" />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="Amount"
-                android:textColor="#fff"
-                android:textSize="@dimen/txt_size_17" />
-
+                android:layout_height="50dp"/>
+        </TableRow>
+        <TableRow
+            android:layout_marginTop="5dp">
 
             <TextView
+                android:id="@+id/pending_fees"
+                android:layout_marginLeft="@dimen/margin_20"
+                android:textSize="18dp"
+                android:text="Pending Fees"
+                android:background="@drawable/row_shape"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
                 android:gravity="center"
-                android:text="Date"
-                android:textColor="#fff"
-                android:textSize="@dimen/txt_size_17" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/recycler_view_fess_details"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-        </LinearLayout>
-
+                android:layout_height="50dp"/>
+        </TableRow>
+                    </TableLayout>
     </LinearLayout>
 
 </LinearLayout>

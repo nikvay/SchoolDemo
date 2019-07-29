@@ -12,7 +12,11 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 
-public interface ApiInterface {
+public interface ApiInterface
+{
+    @POST(EndApi.FEES_DETAILS)
+    @FormUrlEncoded
+    Call<SuccessModule>feesCall(@Field("student_id")String id);
 
     @POST(EndApi.LOGIN)
     @FormUrlEncoded
@@ -172,6 +176,9 @@ public interface ApiInterface {
                                             @Field("title") String title,
                                             @Field("note_document") String note_document,
                                             @Field("extension") String extension);
+
+    @POST(EndApi.VIDEO_CATEGORIES)
+    Call<SuccessModule>categoriesList();
 
     @POST(EndApi.TIME_TABLE_LIST)
     @FormUrlEncoded

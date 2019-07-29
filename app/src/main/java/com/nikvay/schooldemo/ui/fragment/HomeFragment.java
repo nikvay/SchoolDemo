@@ -47,8 +47,7 @@ public class HomeFragment extends Fragment {
     Context mContext;
     LinearLayout ll_only_std, ll_ts, ll_attendance_hide, ll_notes_hide, ll_result_hide, ll_library_hide, ll_ts_admin;
     RelativeLayout rel_notification_hide;
-    LinearLayout ll_attendance, ll_tutorials, ll_events, ll_leave, ll_video, ll_gk_quiz, ll_holiday, ll_result, ll_library,
-            ll_home_work, ll_time_table, ll_gallery, ll_notification, ll_fees, ll_teacher;
+    LinearLayout ll_attendance, ll_tutorials, ll_events, ll_leave, ll_video, ll_gk_quiz, ll_holiday, ll_result,ll_home_work, ll_time_table, ll_gallery, ll_notification, ll_fees, ll_teacher;
     CarouselView carousel_view;
 
     RelativeLayout rel_gallery_count, rel_notification_count;
@@ -100,8 +99,8 @@ public class HomeFragment extends Fragment {
         } else if (isSelectUser != null && isSelectUser.equalsIgnoreCase("3")) {
             ll_result_hide.setVisibility(View.VISIBLE);
             ll_teacher.setVisibility(View.GONE);
-            ll_fees.setVisibility(View.GONE);
-            ll_gk_quiz.setVisibility(View.GONE);
+            ll_fees.setVisibility(View.VISIBLE);
+            ll_gk_quiz.setVisibility(View.VISIBLE);
         } else if (isSelectUser != null && isSelectUser.equalsIgnoreCase("4")) {
             ll_library_hide.setVisibility(View.VISIBLE);
             rel_notification_hide.setVisibility(View.GONE);
@@ -144,7 +143,7 @@ public class HomeFragment extends Fragment {
         ll_ts_admin = view.findViewById(R.id.ll_ts_admin);
 
         ll_gk_quiz = view.findViewById(R.id.ll_gk_quiz);
-        ll_library = view.findViewById(R.id.ll_library);
+        //ll_library = view.findViewById(R.id.ll_library);
         ll_attendance = view.findViewById(R.id.ll_attendance);
         ll_tutorials = view.findViewById(R.id.ll_tutorials);
         ll_result = view.findViewById(R.id.ll_result);
@@ -245,7 +244,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        ll_library.setOnClickListener(new View.OnClickListener() {
+/*        ll_library.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (isSelectUser.equalsIgnoreCase("2")) {
@@ -257,7 +256,7 @@ public class HomeFragment extends Fragment {
                     ((HomeActivity) mContext).replaceFragment(new LibraryFragment());
                 }
             }
-        });
+        });*/
 
         ll_library_hide.setOnClickListener(new View.OnClickListener() {
             @Override

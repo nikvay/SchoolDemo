@@ -1,6 +1,8 @@
 package com.nikvay.schooldemo.domain.module;
 
 import com.google.gson.annotations.SerializedName;
+import com.nikvay.schooldemo.ui.module.FeesModel;
+import com.nikvay.schooldemo.ui.module.VideoCategoryModel;
 
 import java.util.ArrayList;
 
@@ -9,6 +11,89 @@ public class SuccessModule {
     private String error_code;
     private String img_base_url;
     private String school_name;
+    String id,academic_year,total_fees,paid_fees,next_due_date,pending_fees;
+    public SuccessModule(String id, String academic_year, String total_fees, String paid_fees, String next_due_date, String pending_fees)
+    {
+        this.id = id;
+        this.academic_year = academic_year;
+        this.total_fees = total_fees;
+        this.paid_fees = paid_fees;
+        this.next_due_date = next_due_date;
+        this.pending_fees = pending_fees;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getAcademic_year() {
+        return academic_year;
+    }
+
+    public void setAcademic_year(String academic_year) {
+        this.academic_year = academic_year;
+    }
+
+    public String getTotal_fees() {
+        return total_fees;
+    }
+
+    public void setTotal_fees(String total_fees) {
+        this.total_fees = total_fees;
+    }
+
+    public String getPaid_fees() {
+        return paid_fees;
+    }
+
+    public void setPaid_fees(String paid_fees) {
+        this.paid_fees = paid_fees;
+    }
+
+    public String getNext_due_date() {
+        return next_due_date;
+    }
+
+    public void setNext_due_date(String next_due_date) {
+        this.next_due_date = next_due_date;
+    }
+
+    public String getPending_fees() {
+        return pending_fees;
+    }
+
+    public void setPending_fees(String pending_fees) {
+        this.pending_fees = pending_fees;
+    }
+
+    @SerializedName("categories_list")
+    private ArrayList<VideoCategoryModel>videoCategoryModelArrayList;
+
+    public ArrayList<VideoCategoryModel> getVideoCategoryModelArrayList()
+    {
+        return videoCategoryModelArrayList;
+    }
+
+    public void setVideoCategoryModelArrayList(ArrayList<VideoCategoryModel> videoCategoryModelArrayList)
+    {
+        this.videoCategoryModelArrayList = videoCategoryModelArrayList;
+    }
+
+    @SerializedName("Fees_Details")
+    private ArrayList<FeesModel>feesModels;
+
+    public ArrayList<FeesModel> getFeesModels()
+    {
+        return feesModels;
+    }
+
+    public void setFeesModels(ArrayList<FeesModel> feesModels) {
+        this.feesModels = feesModels;
+    }
 
     @SerializedName("user_details")
     private ArrayList<LoginModule> user_details;

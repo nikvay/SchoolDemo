@@ -22,7 +22,9 @@ import com.nikvay.schooldemo.domain.module.VideoListModule;
 import com.nikvay.schooldemo.domain.network.ApiClient;
 import com.nikvay.schooldemo.domain.network.ApiInterface;
 import com.nikvay.schooldemo.shared_pref.SharedPreference;
+import com.nikvay.schooldemo.ui.adapter.CategoriesAdapter;
 import com.nikvay.schooldemo.ui.adapter.VideoAdapter;
+import com.nikvay.schooldemo.ui.module.VideoCategoryModel;
 import com.nikvay.schooldemo.utils.NetworkUtils;
 import com.google.gson.Gson;
 
@@ -45,6 +47,8 @@ public class VideoTutorialsFragment extends Fragment {
     String TAG = getClass().getSimpleName();
     ApiInterface apiInterface;
     ProgressDialog pd;
+    ArrayList<VideoCategoryModel>categoriesList=new ArrayList();
+
     String token, isSelectUser;
     SharedPreferences sharedpreferences;
     public static String MyPREFERENCES = "Fast Connect";
@@ -91,8 +95,45 @@ public class VideoTutorialsFragment extends Fragment {
         pd = new ProgressDialog(mContext);
         pd.setMessage("Loading Please Wait...");
         pd.setCancelable(false);
-        pd.show();
-        Call<SuccessModule> call = apiInterface.videoTutorialsListCall();
+        //pd.show();
+        Call<SuccessModule>call=apiInterface.categoriesList();
+        call.enqueue(new Callback<SuccessModule>() {
+            @Override
+            public void onResponse(Call<SuccessModule> call, Response<SuccessModule> response)
+            {
+            String str_response=new Gson().toJson(response.body());
+            Log.e(""+TAG,"Response>>>>"+str_response);
+
+            try
+            {
+             if (response.isSuccessful())
+             {
+                SuccessModule successModule=response.body();
+                String msg=successModule.getMsg();
+                String error_code=successModule.getError_code();
+                 Toast.makeText(getContext(), error_code+""+msg, Toast.LENGTH_SHORT).show();
+                 if (successModule!=null)
+                 {
+                     categoriesList=successModule.getVideoCategoryModelArrayList();
+                     Collections.reverse(categoriesList);
+                     CategoriesAdapter categoriesAdapter=new CategoriesAdapter(mContext,categoriesList);
+                     recycler_view_video.setAdapter(categoriesAdapter);
+                 }
+             }
+            }
+            catch (Exception e)
+            {
+                e.printStackTrace();
+            }
+            }
+
+            @Override
+            public void onFailure(Call<SuccessModule> call, Throwable t)
+            {
+
+            }
+        });
+     /*   Call<SuccessModule> call = apiInterface.videoTutorialsListCall();
 
         call.enqueue(new Callback<SuccessModule>() {
             @Override
@@ -100,7 +141,6 @@ public class VideoTutorialsFragment extends Fragment {
                 pd.dismiss();
                 String str_response = new Gson().toJson(response.body());
                 Log.e("" + TAG, "Response >>>>" + str_response);
-
                 try {
                     if (response.isSuccessful()) {
                         SuccessModule loginModule = response.body();
@@ -144,6 +184,6 @@ public class VideoTutorialsFragment extends Fragment {
                 pd.dismiss();
                 Toasty.error(mContext, "" + t.getMessage(), Toast.LENGTH_SHORT,true).show();
             }
-        });
+        });*/
     }
 }

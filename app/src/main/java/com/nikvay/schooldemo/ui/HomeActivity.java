@@ -146,14 +146,14 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         else if (isSelectUser.equalsIgnoreCase("3"))
         {
             Toast.makeText(this, "student", Toast.LENGTH_SHORT).show();
+            ll_nav_gk_quiz.setVisibility(View.VISIBLE);
 
-            ll_nav_leave_request.setVisibility(View.GONE);
+            ll_nav_leave_request.setVisibility(View.VISIBLE);
             ll_nav_enquiry.setVisibility(View.GONE);
-            ll_nav_upload_notes.setVisibility(View.INVISIBLE);
+            ll_nav_upload_notes.setVisibility(View.GONE);
             tv_user_class.setVisibility(View.VISIBLE);
             ll_nav_gk_quiz.setVisibility(View.VISIBLE);
-            ll_nav_fees.setVisibility(View.GONE);
-            ll_nav_gk_quiz.setVisibility(View.GONE);
+            ll_nav_fees.setVisibility(View.VISIBLE);
 
         } else if (isSelectUser.equalsIgnoreCase("4"))
         {
@@ -187,7 +187,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             overridePendingTransition(R.anim.trans_left_in, R.anim.trans_left_out);
             finish();
         }
-        else
+ /*       else
         {
 SharedPreferences sharedUser=getSharedPreferences("sharedUser",MODE_PRIVATE);
 SharedPreferences.Editor editor=sharedUser.edit();
@@ -202,7 +202,7 @@ editor.commit();
             ll_nav_fees.setVisibility(View.GONE);
             ll_nav_gk_quiz.setVisibility(View.GONE);
         }
-
+*/
         String refresh = sharedpreferences.getString(SharedPreference.REFRESH, "");
         refreshActivity(refresh);
 

@@ -1,6 +1,8 @@
 package com.nikvay.schooldemo.domain.network;
 
 public class EndApi extends BaseApi {
+    public static final String FEES_DETAILS = "ws-student-fees-details";
+
     public static final String REGISTER_USER = "ws-registration";
     public static final String LOGIN = "ws-login";
     public static final String CLASS_LIST = "ws-get-class-list";
@@ -27,6 +29,10 @@ public class EndApi extends BaseApi {
     public static final String NOTES_LIST_TEACHER = "ws-teacher-list-note";
     public static final String NOTES_DELETE_TEACHER = "ws-note-delete";
     public static final String VIDEO_TUTORIALS = "ws-video-tutorial-list";
+
+    public static final String VIDEO_CATEGORIES = "ws-video-tutorial-categories-list";
+
+
     public static final String UPLOAD_TIME_TABLE = "ws-add-time-table";
     public static final String TIME_TABLE_LIST = "ws-list-time-table";
     public static final String HOLIDAY_LIST = "ws-list-acadamic-calender";
