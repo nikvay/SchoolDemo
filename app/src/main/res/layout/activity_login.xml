@@ -78,38 +78,40 @@
 
 
                 <ImageView
-                    android:layout_marginTop="@dimen/margin_20"
                     android:id="@+id/iv_login"
                     android:layout_width="290dp"
-                    android:layout_height="170dp"
+                    android:layout_height="140dp"
+                    android:layout_marginTop="@dimen/margin_20"
                     android:src="@drawable/app_logo" />
-<EditText
-    android:paddingTop="5dp"
-    android:id="@+id/edt_user_id"
-    android:focusable="auto"
-    android:drawableStart="@drawable/ic_account_circle_black_24dp"
-    android:paddingStart="16dp"
-    android:layout_marginTop="@dimen/margin_35"
-    android:cursorVisible="false"
-    android:hint="Username"
-    android:background="@drawable/shape_edit_text"
-    android:textSize="18dp"
-    android:textStyle="bold"
-    android:layout_width="330dp"
-    android:layout_height="45dp"/>
+
                 <EditText
+                    android:id="@+id/edt_user_id"
+                    android:layout_width="330dp"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="@dimen/margin_35"
+                    android:background="@drawable/shape_edit_text"
+                    android:cursorVisible="false"
+                    android:drawableStart="@drawable/ic_account_circle_black_24dp"
+                    android:focusable="auto"
+                    android:hint="Username"
+                    android:paddingStart="16dp"
+                    android:paddingTop="5dp"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/edt_password"
+                    android:layout_width="330dp"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/shape_edit_text"
                     android:drawableStart="@drawable/ic_lock_outline_black_24dp"
                     android:hint="Password"
-                    android:id="@+id/edt_password"
-                    android:paddingStart="16dp"
-                    android:background="@drawable/shape_edit_text"
                     android:inputType="textPassword"
+                    android:paddingStart="16dp"
                     android:textSize="18dp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="15dp"
-                    android:layout_width="330dp"
-                    android:layout_height="45dp"/>
-<!--
+                    android:textStyle="bold" />
+                <!--
                 <android.support.design.widget.TextInputLayout
                     android:layout_marginTop="70dp"
                     android:layout_width="330dp"
@@ -152,10 +154,10 @@
                         android:textStyle="bold" />
                 </android.support.design.widget.TextInputLayout>
 -->
-                 <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/black_faint" />
+                <!--<View-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="1dp"-->
+                <!--android:background="@color/black_faint" />-->
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -189,7 +191,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="#F96120"
+        android:background="#002366"
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
