@@ -37,7 +37,7 @@ public class LoginActivity extends AppCompatActivity implements SuccessDialogClo
 
     private SuccessDialog successDialog;
 
-    TextView tv_action_bar_title,tv_welcome_msg;
+    TextView tv_action_bar_title;
     ImageView iv_back;
     Button btn_login;
     EditText edt_user_id, edt_password;
@@ -68,7 +68,7 @@ public class LoginActivity extends AppCompatActivity implements SuccessDialogClo
 
         schoolName = sharedpreferences.getString(SharedPreference.SCHOOL_NAME, "");
 
-        tv_welcome_msg.setText(schoolName);
+      //  tv_welcome_msg.setText(schoolName);
 
         /*if (isSelectUser.equalsIgnoreCase("1")) {
             tv_action_bar_title.setText("Admin Login");
@@ -104,7 +104,7 @@ public class LoginActivity extends AppCompatActivity implements SuccessDialogClo
         edt_user_id = findViewById(R.id.edt_user_id);
         edt_password = findViewById(R.id.edt_password);
         btn_login = findViewById(R.id.btn_login);
-        tv_welcome_msg = findViewById(R.id.tv_welcome_msg);
+        //tv_welcome_msg = findViewById(R.id.tv_welcome_msg);
     }
 
     private void doValidation() {

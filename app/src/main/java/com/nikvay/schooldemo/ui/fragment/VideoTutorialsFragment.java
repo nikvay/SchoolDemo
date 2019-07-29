@@ -13,7 +13,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.ListAdapter;
 import android.widget.Toast;
 
 import com.nikvay.schooldemo.R;
@@ -42,7 +44,7 @@ public class VideoTutorialsFragment extends Fragment {
 
     Context mContext;
     ImageView iv_empty_list;
-
+    GridView category_grid;
     //======Interface Declaration=========
     String TAG = getClass().getSimpleName();
     ApiInterface apiInterface;
@@ -55,7 +57,7 @@ public class VideoTutorialsFragment extends Fragment {
 
     ArrayList<VideoListModule> videoListModuleArrayList = new ArrayList<>();
     VideoAdapter videoAdapter;
-    RecyclerView recycler_view_video;
+   // RecyclerView recycler_view_video;
 
     public VideoTutorialsFragment() {
         // Required empty public constructor
@@ -73,8 +75,8 @@ public class VideoTutorialsFragment extends Fragment {
         isSelectUser = sharedpreferences.getString(SharedPreference.U_TYPE, "");
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(mContext);
-        recycler_view_video.setLayoutManager(linearLayoutManager);
-        recycler_view_video.setHasFixedSize(true);
+      //  recycler_view_video.setLayoutManager(linearLayoutManager);
+        //recycler_view_video.setHasFixedSize(true);
 
         //============ Api Call ================
         if (NetworkUtils.isNetworkAvailable(mContext)) {
@@ -87,7 +89,8 @@ public class VideoTutorialsFragment extends Fragment {
 
 
     private void find_All_IDs(View view) {
-        recycler_view_video = view.findViewById(R.id.recycler_view_video);
+       // recycler_view_video = view.findViewById(R.id.recycler_view_video);
+        category_grid=view.findViewById(R.id.grid_category);
         iv_empty_list = view.findViewById(R.id.iv_empty_list);
     }
 
@@ -117,7 +120,8 @@ public class VideoTutorialsFragment extends Fragment {
                      categoriesList=successModule.getVideoCategoryModelArrayList();
                      Collections.reverse(categoriesList);
                      CategoriesAdapter categoriesAdapter=new CategoriesAdapter(mContext,categoriesList);
-                     recycler_view_video.setAdapter(categoriesAdapter);
+                  category_grid.setAdapter((ListAdapter) categoriesAdapter);
+                   //  recycler_view_video.setAdapter(categoriesAdapter);
                  }
              }
             }
