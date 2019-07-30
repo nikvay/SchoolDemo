@@ -27,7 +27,8 @@ import org.json.JSONObject;
 
 import java.util.Random;
 
-public class MyFirebaseMessagingService extends FirebaseMessagingService {
+public class MyFirebaseMessagingService extends FirebaseMessagingService
+{
 
     private Context mContext;
     private static final String TAG = "FCM Service";
@@ -76,13 +77,16 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         countNotification();
 
         String title = null, description = null, redirectId = null;
-        try {
+        try
+        {
             JSONObject json = new JSONObject(remoteMessage.getData().get("data"));
 
             title = json.getString("title");
             description = json.getString("description");
             redirectId = json.getString("redirect_id");
-        } catch (JSONException e) {
+        }
+        catch (JSONException e)
+        {
             e.printStackTrace();
         }
 
@@ -198,7 +202,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         notificationBig.setTextViewText(R.id.tv_notification_name_big, "Hey " + userName + " new notification received.");
         notificationBig.setTextViewText(R.id.tv_notification_title_big, title);
         notificationBig.setTextViewText(R.id.tv_notification_desc_big, description);
-        notificationBig.setImageViewResource(R.id.iv_notification_image_big, R.drawable.app_background);
+//        notificationBig.setImageViewResource(R.id.iv_notification_image_big, R.drawable.app_background);
 
         builder = new NotificationCompat.Builder(mContext, CHANNEL_ID)
                 .setSmallIcon(R.mipmap.ic_launcher_round)

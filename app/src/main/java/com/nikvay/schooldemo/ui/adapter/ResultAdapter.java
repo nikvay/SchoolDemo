@@ -1,6 +1,7 @@
 package com.nikvay.schooldemo.ui.adapter;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -8,94 +9,109 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.nikvay.schooldemo.R;
 import com.nikvay.schooldemo.domain.module.ResultExamNameModule;
 import com.nikvay.schooldemo.domain.module.ResultMarkModule;
+import com.nikvay.schooldemo.shared_pref.SharedPreference;
 
 import java.util.ArrayList;
 
 public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.MyViewHolder> {
     Context mContext;
+    SharedPreferences sharedpreferences;
     private ArrayList<ResultExamNameModule> resultExamNameModuleArrayList;
     private ResultChildAdapter resultChildAdapter;
     int marksObtain, outOfMarks;
     double finalPer, m, o;
+    public static String MyPREFERENCES = "Fast Connect";
 
-    public ResultAdapter(Context mContext, ArrayList<ResultExamNameModule> resultExamNameModuleArrayList) {
+    String userFullName;
+    public ResultAdapter(Context mContext, ArrayList<ResultExamNameModule> resultExamNameModuleArrayList)
+    {
         this.mContext = mContext;
         this.resultExamNameModuleArrayList = resultExamNameModuleArrayList;
+        sharedpreferences = mContext.getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+
+        userFullName = sharedpreferences.getString(SharedPreference.USER_FULL_NAME, "");
+
     }
 
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int position) {
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int position)
+    {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_row_item_result_adapter, parent, false);
         return new MyViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, int position)
+    {
         final ResultExamNameModule resultExamNameModule = resultExamNameModuleArrayList.get(position);
+        Toast.makeText(mContext, "hello", Toast.LENGTH_SHORT).show();
+        Toast.makeText(mContext, ""+resultExamNameModule.getObtain_marks_1(), Toast.LENGTH_SHORT).show();
 
-        String testName = resultExamNameModule.getTest_name();
-        String testDate = resultExamNameModule.getTest_date();
+        holder.sub1.setText(resultExamNameModule.getSub1());
+        holder.sub2.setText(resultExamNameModule.getSub2());
+        holder.sub3.setText(resultExamNameModule.getSub3());
+        holder.sub4.setText(resultExamNameModule.getSub4());
+        holder.sub5.setText(resultExamNameModule.getSub5());
 
-        holder.tv_result_test_name.setText(testName);
-        holder.tv_result_test_date.setText(testDate);
+        holder.sub1_marks.setText(resultExamNameModule.getObtain_marks_1());
+        holder.sub2_marks.setText(resultExamNameModule.getObtain_marks_2());
+        holder.sub3_marks.setText(resultExamNameModule.getObtain_marks_3());
+        holder.sub4_marks.setText(resultExamNameModule.getObtain_marks_4());
+        holder.sub5_marks.setText(resultExamNameModule.getObtain_marks_5());
 
-        try {
-            marksObtain = 0;
-            outOfMarks = 0;
-            for (ResultMarkModule resultMarkModule : resultExamNameModule.getResultMarkModuleArrayList()) {
+        holder.sub1_total.setText(resultExamNameModule.getTotal_marks_1());
+        holder.sub2_total.setText(resultExamNameModule.getTotal_marks_1());
+        holder.sub3_total.setText(resultExamNameModule.getTotal_marks_1());
+        holder.sub4_total.setText(resultExamNameModule.getTotal_marks_1());
+        holder.sub5_total.setText(resultExamNameModule.getTotal_marks_1());
 
-                int marks = Integer.parseInt(resultMarkModule.getMarks_obtain());
-                int outOf = Integer.parseInt(resultMarkModule.getOut_of_marks());
-                marksObtain = marksObtain + marks;
-                outOfMarks = outOfMarks + outOf;
+        holder.student_name.setText(userFullName);
 
-                m = marksObtain;
-                o = outOfMarks;
-            }
 
-            String per = String.valueOf(m / o * 100);
-            String finalPer = per.substring(0, 5);//returns va
-
-            holder.tv_result_total.setText("" + marksObtain);
-            holder.tv_result_out_of_mark.setText("" + outOfMarks);
-            holder.tv_result_percentage.setText("" + finalPer + " %");
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-        resultChildAdapter = new ResultChildAdapter(resultExamNameModule.getResultMarkModuleArrayList());
-        holder.recycler_view_result_child.setAdapter(resultChildAdapter);
-        resultChildAdapter.notifyDataSetChanged();
     }
 
     @Override
-    public int getItemCount() {
+    public int getItemCount()
+    {
         return resultExamNameModuleArrayList.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    public class MyViewHolder extends RecyclerView.ViewHolder
+    {
 
-        TextView tv_result_test_name, tv_result_test_date, tv_result_total, tv_result_out_of_mark, tv_result_percentage;
-        RecyclerView recycler_view_result_child;
 
-        public MyViewHolder(@NonNull View itemView) {
+        TextView sub1,sub2,sub3,sub4,sub5,
+                sub1_marks,sub2_marks,sub3_marks,sub4_marks,sub5_marks,
+                sub1_total,sub2_total,sub3_total,sub4_total,sub5_total,student_name;
+        public MyViewHolder(@NonNull View itemView)
+        {
             super(itemView);
-            tv_result_test_name = itemView.findViewById(R.id.tv_result_test_name);
-            tv_result_test_date = itemView.findViewById(R.id.tv_result_test_date);
-            tv_result_total = itemView.findViewById(R.id.tv_result_total);
-            tv_result_out_of_mark = itemView.findViewById(R.id.tv_result_out_of_mark);
-            tv_result_percentage = itemView.findViewById(R.id.tv_result_percentage);
-//            tv_sub_name_one = itemView.findViewById(R.id.tv_sub_name_one);
 
-            recycler_view_result_child = itemView.findViewById(R.id.recycler_view_result_child);
-//            LinearLayoutManager layoutManager = new LinearLayoutManager(itemView.getContext(), LinearLayoutManager.VERTICAL,false);
-            LinearLayoutManager layoutManager = new LinearLayoutManager(mContext);
-            recycler_view_result_child.setLayoutManager(layoutManager);
-            recycler_view_result_child.setHasFixedSize(true);
+            student_name=itemView.findViewById(R.id.student_name);
+
+            sub1=itemView.findViewById(R.id.sub1);
+            sub2=itemView.findViewById(R.id.sub2);
+            sub3=itemView.findViewById(R.id.sub3);
+            sub4=itemView.findViewById(R.id.sub4);
+            sub5=itemView.findViewById(R.id.sub5);
+
+            sub1_marks=itemView.findViewById(R.id.s1_marks);
+            sub2_marks=itemView.findViewById(R.id.s2_marks);
+            sub3_marks=itemView.findViewById(R.id.s3_marks);
+            sub4_marks=itemView.findViewById(R.id.s4_marks);
+            sub5_marks=itemView.findViewById(R.id.s5_marks);
+
+            sub1_total=itemView.findViewById(R.id.s1_total_marks);
+            sub2_total=itemView.findViewById(R.id.s2_total_marks);
+            sub3_total=itemView.findViewById(R.id.s3_total_marks);
+            sub4_total=itemView.findViewById(R.id.s4_total_marks);
+            sub5_total=itemView.findViewById(R.id.s5_total_marks);
         }
     }
 }

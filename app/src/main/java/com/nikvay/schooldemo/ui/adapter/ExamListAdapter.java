@@ -1,6 +1,7 @@
 package com.nikvay.schooldemo.ui.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 
 import com.nikvay.schooldemo.R;
 import com.nikvay.schooldemo.domain.module.ExamListModel;
+import com.nikvay.schooldemo.ui.activity.ResultDetailsActivity;
 
 import java.util.ArrayList;
 
@@ -36,16 +38,19 @@ ArrayList<ExamListModel>examListModelArrayList;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ListViewHolder listViewHolder, int i)
+    public void onBindViewHolder(@NonNull ListViewHolder listViewHolder, final int i)
     {
         ExamListModel examListModel=examListModelArrayList.get(i);
         listViewHolder.textView.setText(examListModel.getName());
         final String id=examListModel.getExam_id();
-        listViewHolder.cardView.setOnClickListener(new View.OnClickListener() {
+        listViewHolder.cardView.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View view)
             {
-                Toast.makeText(context, ""+id, Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(context, ResultDetailsActivity.class);
+                intent.putExtra("id",id);
+                context.startActivity(intent);
             }
         });
     }

@@ -42,7 +42,8 @@ import retrofit2.Response;
 import static android.content.Context.MODE_PRIVATE;
 
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment
+{
 
     Context mContext;
     LinearLayout ll_only_std, ll_ts, ll_attendance_hide, ll_notes_hide, ll_result_hide, ll_library_hide, ll_ts_admin;
@@ -175,7 +176,8 @@ public class HomeFragment extends Fragment {
 
         notification_count = sharedpreferences.getString(SharedPreference.NOTIFICATION_COUNT, "");
         tv_notification_count.setText(notification_count);
-        if (notification_count != null && notification_count.equals("")) {
+        if (notification_count != null && notification_count.equals(""))
+        {
             rel_notification_count.setVisibility(View.GONE);
         }
 

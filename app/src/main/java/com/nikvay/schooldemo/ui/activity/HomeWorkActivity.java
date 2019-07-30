@@ -521,11 +521,14 @@ public class HomeWorkActivity extends AppCompatActivity implements SuccessDialog
             }
 
             @Override
-            public void onFailure(Call<SuccessModule> call, Throwable t) {
+            public void onFailure(Call<SuccessModule> call, Throwable t)
+            {
                 pd.dismiss();
-                if (t instanceof SocketTimeoutException) {
+                if (t instanceof SocketTimeoutException)
+                {
                     Toasty.error(HomeWorkActivity.this, "Socket Time out. Please try again.", Toast.LENGTH_SHORT, true).show();
-                } else {
+                } else
+                    {
                     Toasty.error(HomeWorkActivity.this, "" + t.getMessage(), Toast.LENGTH_SHORT, true).show();
                 }
             }
@@ -533,14 +536,16 @@ public class HomeWorkActivity extends AppCompatActivity implements SuccessDialog
     }
 
     @Override
-    public void onBackPressed() {
+    public void onBackPressed()
+    {
         super.onBackPressed();
         overridePendingTransition(R.anim.trans_right_in, R.anim.trans_right_out);
         finish();
     }
 
     @Override
-    public void dialogClosed(boolean mClosed) {
+    public void dialogClosed(boolean mClosed)
+    {
         editor.putString(SharedPreference.REFRESH, "4");
         editor.apply();
         Intent intent = new Intent(HomeWorkActivity.this, HomeActivity.class);

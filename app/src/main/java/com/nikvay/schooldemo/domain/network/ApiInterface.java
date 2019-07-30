@@ -268,7 +268,8 @@ public interface ApiInterface
 
     @POST(EndApi.RESULT_LIST)
     @FormUrlEncoded
-    Call<SuccessModule> resultListCall(@Field("student_id") String student_id);
+    Call<SuccessModule> resultListCall(@Field("student_id") String student_id,
+                                        @Field("exam_id")String exam_id);
 
     @POST(EndApi.GROUP_LIST)
     @FormUrlEncoded

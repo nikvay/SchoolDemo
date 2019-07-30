@@ -170,7 +170,7 @@ public class SuccessModule
     @SerializedName("teacher_library_details")
     private ArrayList<LibraryTeacherModule> libraryTeacherModuleArrayList;
 
-    @SerializedName("test_list")
+    @SerializedName("marks_list")
     private ArrayList<ResultExamNameModule> resultExamNameModuleArrayList;
 
     @SerializedName("group_list")

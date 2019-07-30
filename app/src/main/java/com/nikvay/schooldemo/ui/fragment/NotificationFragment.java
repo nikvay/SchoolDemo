@@ -54,7 +54,8 @@ public class NotificationFragment extends Fragment {
             btn_notification.setVisibility(View.GONE);
         }
         isSelectUser = sharedpreferences.getString(SharedPreference.U_TYPE, "");
-        if (isSelectUser.equalsIgnoreCase("3")) {
+        if (isSelectUser.equalsIgnoreCase("3"))
+        {
             btn_notification.setVisibility(View.GONE);
         }
 
