@@ -3,356 +3,259 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="@dimen/margin_10"
+    android:orientation="vertical"
     android:paddingStart="@dimen/margin_5"
     android:paddingEnd="@dimen/margin_5">
+
+<LinearLayout
+    android:background="@color/colorAccent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="50dp">
+    <TextView
+        android:paddingTop="10dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:layout_gravity="center_horizontal"
+        android:text="Student Name"
+        android:id="@+id/student_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/colorAccent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_sub_name"
+            android:text="Subject"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:layout_marginLeft="@dimen/margin_20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tv_marks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_40"
+            android:layout_toRightOf="@id/tv_sub_name"
+            android:text="Obtained Marks"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/total_marks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="42dp"
+            android:layout_toRightOf="@+id/tv_marks"
+            android:text="Total Marks"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:background="@drawable/row_shape"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <TextView
+            android:padding="10dp"
+            android:id="@+id/sub1"
+            android:text="subject1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s1_marks"
+            android:layout_toRightOf="@+id/sub1"
+            android:layout_marginLeft="70dp"
+            android:padding="10dp"
+            android:text="sub1Mars"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+
+            android:id="@+id/s1_total_marks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:padding="10dp"
+            android:layout_toRightOf="@+id/s1_marks"
+            android:text="subject1" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/shape_list_recycler_view"
-        android:orientation="vertical">
+        android:layout_marginTop="5dp"
+        android:background="@drawable/row_shape">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/sub2"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/shape_resuly_title"
-            android:orientation="vertical"
-            android:padding="@dimen/padding_5">
+            android:layout_below="@+id/sub1"
+            android:padding="10dp"
+            android:text="subject2" />
 
-            <TextView
-                android:id="@+id/tv_result_test_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Name"
-                android:textColor="@color/txt_color_black"
-                android:textSize="@dimen/txt_size_17" />
-
-            <TextView
-                android:id="@+id/tv_result_test_date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:layout_marginEnd="@dimen/margin_5"
-                android:text="13-03-2019"
-                android:textColor="@color/white"
-                android:textSize="@dimen/txt_size_15" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/s2_marks"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_below="@+id/s1_marks"
+            android:padding="10dp"
+            android:layout_marginLeft="70dp"
+            android:layout_toRightOf="@+id/sub1"
+            android:text="subject1" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="10">
-
-                <RelativeLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:padding="@dimen/padding_5"
-                        android:text="No."
-                        android:textColor="@color/txt_color_black"
-                        android:textSize="@dimen/txt_size_17" />
-
-                    <View
-                        android:layout_width="1dp"
-                        android:layout_height="match_parent"
-                        android:layout_alignParentEnd="true"
-                        android:background="@color/black_faint" />
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="3">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:padding="@dimen/padding_5"
-                        android:text="Subject Name"
-                        android:textColor="@color/txt_color_black"
-                        android:textSize="@dimen/txt_size_17" />
-
-                    <View
-                        android:layout_width="1dp"
-                        android:layout_height="match_parent"
-                        android:layout_alignParentEnd="true"
-                        android:background="@color/black_faint" />
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:padding="@dimen/padding_5"
-                        android:text="Obtained Mark"
-                        android:textColor="@color/txt_color_black"
-                        android:textSize="@dimen/txt_size_17" />
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="3">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:padding="@dimen/padding_5"
-                        android:text="Out of Mark"
-                        android:textColor="@color/txt_color_black"
-                        android:textSize="@dimen/txt_size_17" />
-
-                    <View
-                        android:layout_width="1dp"
-                        android:layout_height="match_parent"
-                        android:background="@color/black_faint" />
-
-                </RelativeLayout>
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/black_faint" />
-
-        </LinearLayout>
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recycler_view_result_child"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/s2_total_marks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/s1_total_marks"
+            android:layout_marginLeft="100dp"
+            android:padding="10dp"
+            android:layout_toRightOf="@+id/s2_marks"
+            android:text="subject1" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:background="@drawable/row_shape"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/sub3"
+            android:layout_below="@+id/sub2"
+            android:text="subject3"
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s3_marks"
+            android:layout_below="@+id/s2_marks"
+            android:layout_toRightOf="@+id/sub3"
+            android:layout_marginLeft="70dp"
+            android:padding="10dp"
+            android:text="subject1"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/s3_total_marks"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="10">
-
-                <RelativeLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:padding="@dimen/padding_3"
-                        android:text=""
-                        android:textColor="@color/txt_color_black"
-                        android:textSize="@dimen/txt_size_17" />
-
-                    <View
-                        android:layout_width="1dp"
-                        android:layout_height="match_parent"
-                        android:layout_alignParentEnd="true"
-                        android:background="@color/black_faint" />
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="3">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:padding="@dimen/padding_3"
-                        android:text="Total"
-                        android:textColor="@color/txt_color_green"
-                        android:textSize="@dimen/txt_size_17"
-                        android:textStyle="bold" />
-
-                    <View
-                        android:layout_width="1dp"
-                        android:layout_height="match_parent"
-                        android:layout_alignParentEnd="true"
-                        android:background="@color/black_faint" />
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3">
-
-                    <TextView
-                        android:id="@+id/tv_result_total"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:padding="@dimen/padding_3"
-                        android:text="0"
-                        android:textColor="@color/txt_color_green"
-                        android:textSize="@dimen/txt_size_17" />
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="3">
-
-                    <TextView
-                        android:id="@+id/tv_result_out_of_mark"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:padding="@dimen/padding_5"
-                        android:text="0"
-                        android:textColor="@color/txt_color_red"
-                        android:textSize="@dimen/txt_size_17" />
-
-                    <View
-                        android:layout_width="1dp"
-                        android:layout_height="match_parent"
-                        android:background="@color/black_faint" />
-
-                </RelativeLayout>
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/black_faint" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="10">
-
-                <RelativeLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:padding="@dimen/padding_3"
-                        android:text=""
-                        android:textColor="@color/txt_color_black"
-                        android:textSize="@dimen/txt_size_17" />
-
-                    <View
-                        android:layout_width="1dp"
-                        android:layout_height="match_parent"
-                        android:layout_alignParentEnd="true"
-                        android:background="@color/black_faint" />
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="3">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:padding="@dimen/padding_3"
-                        android:text="Percentage"
-                        android:textColor="@color/txt_color_green"
-                        android:textSize="@dimen/txt_size_17"
-                        android:textStyle="bold" />
-
-                    <View
-                        android:layout_width="1dp"
-                        android:layout_height="match_parent"
-                        android:layout_alignParentEnd="true"
-                        android:background="@color/black_faint" />
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3">
-
-                    <TextView
-                        android:id="@+id/tv_result_percentage"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:padding="@dimen/padding_3"
-                        android:text="0.0 %"
-                        android:textColor="@color/txt_color_green"
-                        android:textSize="@dimen/txt_size_17" />
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="3">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:padding="@dimen/padding_5"
-                        android:text=""
-                        android:textColor="@color/txt_color_red"
-                        android:textSize="@dimen/txt_size_17" />
-
-                    <View
-                        android:layout_width="1dp"
-                        android:layout_height="match_parent"
-                        android:background="@color/black_faint" />
-
-                </RelativeLayout>
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/black_faint" />
-
-        </LinearLayout>
-
+            android:layout_below="@+id/s2_total_marks"
+            android:layout_marginLeft="100dp"
+            android:padding="10dp"
+            android:layout_toRightOf="@+id/s2_marks"
+            android:text="subject1" />
     </LinearLayout>
+<LinearLayout
+    android:layout_marginTop="5dp"
+    android:background="@drawable/row_shape"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/sub4"
+            android:text="subject4"
+            android:padding="10dp"
+            android:layout_below="@+id/sub3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/s4_marks"
+            android:layout_below="@+id/s3_marks"
+            android:layout_toRightOf="@+id/sub4"
+            android:layout_marginLeft="70dp"
+            android:padding="10dp"
+            android:text="subject1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/s4_total_marks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/s3_total_marks"
+        android:layout_marginLeft="100dp"
+        android:padding="10dp"
+        android:layout_toRightOf="@+id/s4_marks"
+        android:text="subject1" />
+</LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:background="@drawable/row_shape"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/sub5"
+            android:text="subject5"
+            android:layout_below="@+id/sub4"
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+        <TextView
+            android:id="@+id/s5_marks"
+            android:layout_below="@+id/s4_marks"
+            android:layout_toRightOf="@+id/sub5"
+            android:layout_marginLeft="70dp"
+            android:padding="10dp"
+            android:text="subject1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/s5_total_marks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/s4_total_marks"
+            android:layout_marginLeft="100dp"
+            android:padding="10dp"
+            android:layout_toRightOf="@+id/s2_marks"
+            android:text="subject1" />
+    </LinearLayout>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/total"
+        android:text="Total"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    <TextView
+        android:id="@+id/t_marks"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:text="Total"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/out_of_marks"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="20dp"
+        android:text=""
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_alignParentEnd="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</RelativeLayout>
 
 </LinearLayout>

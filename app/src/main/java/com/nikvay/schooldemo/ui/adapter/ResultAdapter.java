@@ -53,6 +53,25 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.MyViewHold
         Toast.makeText(mContext, "hello", Toast.LENGTH_SHORT).show();
         Toast.makeText(mContext, ""+resultExamNameModule.getObtain_marks_1(), Toast.LENGTH_SHORT).show();
 
+        int s1_marks,s2_marks,s3_marks,s4_marks,s5_marks,total;
+        String ss1_marks,ss2_marks,ss3_marks,ss4_marks,ss5_marks;
+
+        ss1_marks=resultExamNameModule.getObtain_marks_1();
+        ss2_marks=resultExamNameModule.getObtain_marks_2();
+        ss3_marks=resultExamNameModule.getObtain_marks_3();
+      //  ss4_marks=resultExamNameModule.getObtain_marks_4();
+       // ss5_marks=resultExamNameModule.getObtain_marks_5();
+
+        s1_marks=Integer.parseInt(ss1_marks);
+        s2_marks=Integer.parseInt(ss2_marks);
+        s3_marks=Integer.parseInt(ss3_marks);
+      //  s4_marks=Integer.parseInt(ss4_marks);
+        //s5_marks=Integer.parseInt(ss5_marks);
+
+        total=s1_marks+(s2_marks)+(s3_marks);
+
+        holder.total.setText(String.valueOf(total));
+
         holder.sub1.setText(resultExamNameModule.getSub1());
         holder.sub2.setText(resultExamNameModule.getSub2());
         holder.sub3.setText(resultExamNameModule.getSub3());
@@ -66,10 +85,10 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.MyViewHold
         holder.sub5_marks.setText(resultExamNameModule.getObtain_marks_5());
 
         holder.sub1_total.setText(resultExamNameModule.getTotal_marks_1());
-        holder.sub2_total.setText(resultExamNameModule.getTotal_marks_1());
-        holder.sub3_total.setText(resultExamNameModule.getTotal_marks_1());
-        holder.sub4_total.setText(resultExamNameModule.getTotal_marks_1());
-        holder.sub5_total.setText(resultExamNameModule.getTotal_marks_1());
+        holder.sub2_total.setText(resultExamNameModule.getTotal_marks_2());
+        holder.sub3_total.setText(resultExamNameModule.getTotal_marks_3());
+        holder.sub4_total.setText(resultExamNameModule.getTotal_marks_4());
+        holder.sub5_total.setText(resultExamNameModule.getTotal_marks_5());
 
         holder.student_name.setText(userFullName);
 
@@ -88,13 +107,13 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.MyViewHold
 
         TextView sub1,sub2,sub3,sub4,sub5,
                 sub1_marks,sub2_marks,sub3_marks,sub4_marks,sub5_marks,
-                sub1_total,sub2_total,sub3_total,sub4_total,sub5_total,student_name;
+                sub1_total,sub2_total,sub3_total,sub4_total,sub5_total,student_name,total;
         public MyViewHolder(@NonNull View itemView)
         {
             super(itemView);
 
             student_name=itemView.findViewById(R.id.student_name);
-
+            total=itemView.findViewById(R.id.t_marks);
             sub1=itemView.findViewById(R.id.sub1);
             sub2=itemView.findViewById(R.id.sub2);
             sub3=itemView.findViewById(R.id.sub3);
