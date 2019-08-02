@@ -55,7 +55,7 @@ LayoutInflater layoutInflater;
         view=layoutInflater.inflate(R.layout.video_category_layout,null);
         TextView textView=view.findViewById(R.id.tv_category);
         final VideoCategoryModel videoCategoryModel=categoriesList.get(i);
-     //   textView.setText(videoCategoryModel.getName());
+        textView.setText(videoCategoryModel.getName());
         CardView cardView=view.findViewById(R.id.card_vdo);
         cardView.setOnClickListener(new View.OnClickListener()
         {
