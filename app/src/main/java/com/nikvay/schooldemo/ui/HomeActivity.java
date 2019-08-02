@@ -696,8 +696,8 @@ editor.commit();
         if (notification_count != null && notification_count.equals("")) {
             view_notification_count.setVisibility(View.GONE);
         }
-
-        tv_school_name.setText(schoolName);
+//TODO
+        tv_school_name.setText("Nikvay Class");
         tv_user_name.setText(userFullName);
         tv_user_email.setText(userName);
         tv_user_class.setText(classDiv);

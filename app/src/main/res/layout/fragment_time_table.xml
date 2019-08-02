@@ -126,7 +126,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@color/black_faint"
+                android:background="#10D5D5"
                 android:orientation="vertical"
                 android:padding="5dp">
 

@@ -54,7 +54,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="#147fbb"
+        android:background="#002366"
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
@@ -62,7 +62,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="@dimen/padding_5"
-            android:text="Nikvay Technology 2019"
+            android:text="Powered By: Nikvay Technology"
             android:textColor="#FFFFFF"
             android:textSize="@dimen/txt_size_17" />
 

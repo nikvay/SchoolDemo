@@ -23,7 +23,8 @@
         android:layout_height="match_parent"
         android:layout_above="@+id/ll_bottom_notification"
         android:layout_below="@+id/tabLayout"
-        android:layout_marginBottom="0dp"
+        android:layout_marginTop="-2dp"
+        android:layout_marginBottom="2dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
     <LinearLayout
@@ -42,7 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_30"
             android:layout_marginEnd="@dimen/margin_30"
-            android:background="@drawable/shape_btn_corner"
+            android:background="#002366"
             android:text="Add Notification"
             android:textAllCaps="false"
             android:textColor="@color/btn_txt_color"

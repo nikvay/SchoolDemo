@@ -83,6 +83,15 @@
                     android:layout_height="140dp"
                     android:layout_marginTop="@dimen/margin_20"
                     android:src="@drawable/app_logo" />
+//TODO
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="Nikvay Class"
+                    android:textColor="#F96120"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
 
                 <EditText
                     android:id="@+id/edt_user_id"
@@ -199,7 +208,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="@dimen/padding_5"
-            android:text="Nikvay Technology 2019"
+            android:text="Powered By: Nikvay Technology"
             android:textColor="@color/white"
             android:textSize="@dimen/txt_size_17" />
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/app_them">
+    android:background="@drawable/chat1">
 
     <LinearLayout
         android:id="@+id/rel_actionbar"
@@ -79,23 +79,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/shape_search_back"
         android:padding="7dp">
 
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_toStartOf="@+id/rel_chat_send"
+            android:layout_width="365dp"
+
+            android:layout_height="45dp"
             android:background="@drawable/shape_search_corner"
+            android:layout_toStartOf="@+id/rel_chat_send"
             android:padding="@dimen/padding_5">
 
             <EditText
                 android:id="@+id/edt_chatting"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingTop="6dp"
                 android:layout_marginStart="@dimen/margin_7"
                 android:background="@null"
-                android:hint="text"
+                android:hint=" Type a message"
                 android:maxLines="4"
                 android:textColor="@color/txt_color_black" />
 
@@ -119,10 +120,10 @@
 
             <ImageView
                 android:id="@+id/iv_btn_send_message_chat"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:padding="@dimen/padding_5"
+                android:paddingBottom="40dp"
                 android:src="@drawable/ic_vector_send_message_chat" />
 
         </RelativeLayout>

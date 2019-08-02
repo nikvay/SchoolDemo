@@ -63,7 +63,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_marginTop="@dimen/margin_1"
-                android:background="#FF9100"
+                android:background="#002366"
                 android:orientation="horizontal"
                 android:paddingStart="@dimen/padding_15"
                 android:paddingTop="@dimen/padding_5"
@@ -75,7 +75,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_10"
                     android:autoLink="web"
-                    android:text="Developed By www.nikvay.com"
+                    android:text="Powered By: www.nikvay.com"
                     android:textColor="@color/txt_color_white"
                     android:textColorLink="@color/txt_color_white"
                     android:textSize="@dimen/txt_size_17" />
