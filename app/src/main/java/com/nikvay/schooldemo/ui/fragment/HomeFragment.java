@@ -25,6 +25,7 @@ import com.nikvay.schooldemo.domain.network.ApiClient;
 import com.nikvay.schooldemo.domain.network.ApiInterface;
 import com.nikvay.schooldemo.shared_pref.SharedPreference;
 import com.nikvay.schooldemo.ui.HomeActivity;
+import com.nikvay.schooldemo.ui.activity.GroupChatActivity;
 import com.nikvay.schooldemo.ui.activity.HolidayActivity;
 import com.nikvay.schooldemo.ui.activity.UploadNotesActivity;
 import com.nikvay.schooldemo.utils.NetworkUtils;
@@ -46,7 +47,7 @@ public class HomeFragment extends Fragment
 {
 
     Context mContext;
-    LinearLayout ll_only_std, ll_ts, ll_attendance_hide, ll_notes_hide, ll_result_hide, ll_library_hide, ll_ts_admin;
+    LinearLayout ll_only_std, ll_ts, ll_attendance_hide, ll_notes_hide, ll_result_hide, ll_library_hide, ll_ts_admin,ll_groupChat;
     RelativeLayout rel_notification_hide;
     LinearLayout ll_attendance, ll_tutorials, ll_events, ll_leave, ll_video, ll_gk_quiz, ll_holiday, ll_result,ll_home_work, ll_time_table, ll_gallery, ll_notification, ll_fees, ll_teacher;
     CarouselView carousel_view;
@@ -132,6 +133,7 @@ public class HomeFragment extends Fragment
     }
 
     private void find_All_IDs(View view) {
+        ll_groupChat=view.findViewById(R.id.group_chat);
         SharedPreferences sharedUser=getContext().getSharedPreferences("sharedUser",MODE_PRIVATE);
         user=sharedUser.getString("user"," ");
         ll_only_std = view.findViewById(R.id.ll_only_std);
@@ -189,6 +191,7 @@ public class HomeFragment extends Fragment
     }
 
     private void event() {
+
 
         ll_attendance.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -274,7 +277,14 @@ public class HomeFragment extends Fragment
                 startActivity(intent);
             }
         });
-
+        ll_groupChat.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                ((HomeActivity) mContext).replaceFragment(new ChatFragment());
+            }
+        });
 
         ll_time_table.setOnClickListener(new View.OnClickListener() {
             @Override

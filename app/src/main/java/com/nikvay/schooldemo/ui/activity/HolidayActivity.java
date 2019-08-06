@@ -4,6 +4,8 @@ import android.app.ProgressDialog;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.webkit.WebView;
@@ -18,6 +20,7 @@ import com.nikvay.schooldemo.domain.network.ApiClient;
 import com.nikvay.schooldemo.domain.network.ApiInterface;
 import com.nikvay.schooldemo.domain.network.BaseApi;
 import com.nikvay.schooldemo.shared_pref.SharedPreference;
+import com.nikvay.schooldemo.ui.adapter.HolidayAdapter;
 import com.nikvay.schooldemo.utils.NetworkUtils;
 import com.google.gson.Gson;
 
@@ -31,7 +34,7 @@ import retrofit2.Response;
 public class HolidayActivity extends AppCompatActivity {
 
     ImageView iv_back;
-    WebView web_view_holiday;
+  //  WebView web_view_holiday;
     //======Interface Declaration=========
     String TAG = getClass().getSimpleName();
     ApiInterface apiInterface;
@@ -39,7 +42,7 @@ public class HolidayActivity extends AppCompatActivity {
     String uId, isSelectUser, timeTable_notes;
     SharedPreferences sharedpreferences;
     public static String MyPREFERENCES = "Fast Connect";
-
+    RecyclerView recyclerView;
     ArrayList<HolidayListModule> holidayListModuleArrayList = new ArrayList<>();
 
     @Override
@@ -74,22 +77,26 @@ public class HolidayActivity extends AppCompatActivity {
 
     private void find_All_IDs() {
         iv_back = findViewById(R.id.iv_back);
-        web_view_holiday = findViewById(R.id.web_view_holiday);
+        recyclerView=findViewById(R.id.recyclerview);
+        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setHasFixedSize(true);
+        //web_view_holiday = findViewById(R.id.web_view_holiday);
     }
 
     private void webViewDisplay() {
-        web_view_holiday.getSettings().setJavaScriptEnabled(true);
+       /* web_view_holiday.getSettings().setJavaScriptEnabled(true);
         web_view_holiday.getSettings().setBuiltInZoomControls(true);
         web_view_holiday.setVerticalScrollBarEnabled(true);
         web_view_holiday.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
-        web_view_holiday.setInitialScale(100);
+        web_view_holiday.setInitialScale(100);*/
     }
 
     private void loadPdfUrlStd(String url) {
 
         final String pdfUrl = url;
 
-        web_view_holiday.setWebViewClient(new WebViewClient() {
+   /*     web_view_holiday.setWebViewClient(new WebViewClient() {
             @Override
             public void onPageFinished(WebView view, String pdfUrl) {
 
@@ -100,7 +107,7 @@ public class HolidayActivity extends AppCompatActivity {
         });
         web_view_holiday.loadUrl("http://drive.google.com/viewerng/viewer?embedded=true&url=" + pdfUrl);
 //        web_view_time_table.loadUrl(pdfUrl);
-
+*/
     }
 
     private void holidayCall() {
@@ -130,15 +137,17 @@ public class HolidayActivity extends AppCompatActivity {
                             if (errorCode.equalsIgnoreCase("1")) {
 
                                 holidayListModuleArrayList = loginModule.getHolidayListModuleArrayList();
-                                String documentName = "";
+                                HolidayAdapter holidayAdapter=new HolidayAdapter(getApplicationContext(),holidayListModuleArrayList);
+                                recyclerView.setAdapter(holidayAdapter);
+                              /*  String documentName = "";
                                 for (HolidayListModule timeTableModule : holidayListModuleArrayList) {
                                     documentName = timeTableModule.getPdf_name();
-                                }
+                                }*/
                                 /*myPdfUrl = "http://www.bits-dubai.ac.ae/Admission/Downloads/Fee_structure.pdf";
                                 loadPdfUrl(myPdfUrl);*/
 
-                                String documentUrl = BaseApi.BASE_URL + url + documentName;
-                                loadPdfUrlStd(documentUrl);
+                                /*String documentUrl = BaseApi.BASE_URL + url + documentName;
+                                loadPdfUrlStd(documentUrl);*/
 
 //                                Toast.makeText(HolidayActivity.this, "Successful !!", Toast.LENGTH_SHORT).show();
                             }

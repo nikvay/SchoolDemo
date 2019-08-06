@@ -387,7 +387,8 @@ editor.commit();
         view_notification_count = findViewById(R.id.view_notification_count);
     }
 
-    public void replaceFragment(Fragment fragment) {
+    public void replaceFragment(Fragment fragment)
+    {
         fName = fragment.getClass().getSimpleName();
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

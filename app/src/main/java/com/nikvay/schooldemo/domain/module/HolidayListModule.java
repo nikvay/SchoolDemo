@@ -5,7 +5,16 @@ public class HolidayListModule {
     private String pdf_name;
     private String id;
     private String updated_date;
+    private String title;
     private String status;
+
+    public HolidayListModule(String pdf_name, String id, String updated_date, String title, String status) {
+        this.pdf_name = pdf_name;
+        this.id = id;
+        this.updated_date = updated_date;
+        this.title = title;
+        this.status = status;
+    }
 
     public String getPdf_name() {
         return pdf_name;
@@ -39,4 +48,11 @@ public class HolidayListModule {
         this.status = status;
     }
 
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
 }
